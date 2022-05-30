@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1106</width>
+    <height>621</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ROS_RVIZ_QT</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="robto_status">
+          <property name="text">
+           <string>Robot Status</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="robot_status_ind">
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#c80003;&quot;&gt;offline&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="robot_status_img">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>../resources/images/offline.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QPushButton" name="move_camera_btn">
+                <property name="text">
+                 <string>Move Camera</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../resources/images/classes/MoveCamera.png</normaloff>../resources/images/classes/MoveCamera.png</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="select_btn">
+                <property name="text">
+                 <string>Select</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../resources/images/classes/Select.png</normaloff>../resources/images/classes/Select.png</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="set_pos_btn">
+                <property name="text">
+                 <string>2D Pose Extimate</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../resources/images/classes/Pose.png</normaloff>../resources/images/classes/Pose.png</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="set_nav_btn">
+                <property name="text">
+                 <string>2D Nav Goal</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../resources/images/classes/SetInitialPose.png</normaloff>../resources/images/classes/SetInitialPose.png</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="return_btn">
+                <property name="text">
+                 <string>Return</string>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normaloff>../resources/images/return.png</normaloff>../resources/images/return.png</iconset>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QLabel" name="rviz_map">
+                <property name="text">
+                 <string>Disconnected</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="maximumSize">
+           <size>
+            <width>600</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="connect_tab">
+           <attribute name="title">
+            <string>Connect and Control</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QGroupBox" name="groupBox">
+                <property name="title">
+                 <string>Master node configuration</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_2">
+                 <item row="3" column="0" colspan="3">
+                  <widget class="QLineEdit" name="line_edit_host">
+                   <property name="text">
+                    <string>192.168.1.67</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="1">
+                  <widget class="QPushButton" name="button_disconnect">
+                   <property name="text">
+                    <string>🔗 disconnect</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0" colspan="3">
+                  <widget class="QCheckBox" name="checkbox_use_environment">
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="text">
+                    <string>Use environment variables</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="0" colspan="3">
+                  <widget class="QCheckBox" name="checkbox_remember_settings">
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="text">
+                    <string>Automatic connect to master</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="2">
+                  <widget class="QPushButton" name="button_connect">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="toolTip">
+                    <string>Set the target to the current joint trajectory state.</string>
+                   </property>
+                   <property name="statusTip">
+                    <string>Clear all waypoints and set the target to the current joint trajectory state.</string>
+                   </property>
+                   <property name="text">
+                    <string>connect</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>../resources/images/line.png</normaloff>../resources/images/line.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="label_2">
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <property name="text">
+                    <string>Native IP</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="3">
+                  <widget class="QLineEdit" name="line_edit_master">
+                   <property name="text">
+                    <string>http://192.168.1.2:11311/</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>32</height>
+                    </size>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <property name="text">
+                    <string>Master node address</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item>
+               <layout class="QGridLayout" name="gridLayout_7" rowstretch="0,0,0,0,0" columnminimumwidth="0,0,0">
+                <property name="sizeConstraint">
+                 <enum>QLayout::SetMaximumSize</enum>
+                </property>
+                <property name="leftMargin">
+                 <number>10</number>
+                </property>
+                <property name="topMargin">
+                 <number>10</number>
+                </property>
+                <property name="rightMargin">
+                 <number>10</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>10</number>
+                </property>
+                <property name="horizontalSpacing">
+                 <number>6</number>
+                </property>
+                <item row="3" column="2">
+                 <widget class="QLabel" name="label_ang">
+                  <property name="text">
+                   <string>100               </string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="2">
+                 <widget class="QPushButton" name="pushButton_o">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#pushButton_o:pressed{background-color:rgb(239, 41, 41)}</string>
+                  </property>
+                  <property name="text">
+                   <string>o</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>O</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QPushButton" name="pushButton_back">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#pushButton_back:pressed{background-color:rgb(239, 41, 41)}</string>
+                  </property>
+                  <property name="text">
+                   <string>,</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>,</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QSlider" name="horizontalSlider_ang">
+                  <property name="maximum">
+                   <number>100</number>
+                  </property>
+                  <property name="value">
+                   <number>100</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="label_15">
+                  <property name="text">
+                   <string>Ang vel(cm/s)：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="2">
+                 <widget class="QPushButton" name="pushButton_l">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#pushButton_l:pressed{background-color:rgb(239, 41, 41)}</string>
+                  </property>
+                  <property name="text">
+                   <string>l</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>L</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QPushButton" name="pushButton_j">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#pushButton_j:pressed{background-color:rgb(239, 41, 41)}</string>
+                  </property>
+                  <property name="text">
+                   <string>j</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>J</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QPushButton" name="pushButton_u">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#pushButton_u:pressed{background-color:rgb(239, 41, 41)}</string>
+                  </property>
+                  <property name="text">
+                   <string>u</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>U</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QPushButton" name="pushButton_m">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#pushButton_m:pressed{background-color:rgb(239, 41, 41)}</string>
+                  </property>
+                  <property name="text">
+                   <string>m</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>M</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="2">
+                 <widget class="QPushButton" name="pushButton_backr">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#pushButton_backr:pressed{background-color:rgb(239, 41, 41)}</string>
+                  </property>
+                  <property name="text">
+                   <string>.</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>.</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="label_10">
+                  <property name="text">
+                   <string>Line speed(cm/s)：</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QSlider" name="horizontalSlider_lin">
+                  <property name="maximum">
+                   <number>100</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>1</number>
+                  </property>
+                  <property name="value">
+                   <number>50</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="2">
+                 <widget class="QLabel" name="label_lin">
+                  <property name="text">
+                   <string>50</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QPushButton" name="pushButton_i">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton#pushButton_u:pressed{background-color:rgb(239, 41, 41)}</string>
+                  </property>
+                  <property name="text">
+                   <string>i</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>I</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayout">
+                  <item>
+                   <widget class="QCheckBox" name="checkBox_use_all">
+                    <property name="font">
+                     <font>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Omni mode (A)</string>
+                    </property>
+                    <property name="shortcut">
+                     <string>A</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_k">
+                    <property name="text">
+                     <string>k</string>
+                    </property>
+                    <property name="shortcut">
+                     <string>K</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="rviz">
+           <attribute name="title">
+            <string>Rviz</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item>
+                 <widget class="QLabel" name="label_12">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16</width>
+                    <height>16</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap>../resources/images/classes/Displays.svg</pixmap>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_13">
+                  <property name="text">
+                   <string>Displays</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QTreeView" name="rviz_treeview"/>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QPushButton" name="add_topic">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string>Add</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="remove_topic">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string>Remove</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="rename_topic">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string>Rename</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QGridLayout" name="gridLayout_10">
+                <item row="0" column="0">
+                 <widget class="QPushButton" name="rviz_import">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string>import configuration</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QPushButton" name="rviz_export">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="text">
+                   <string>export configuration</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

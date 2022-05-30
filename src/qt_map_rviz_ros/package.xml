@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>qt_map_rviz_ros</name>
+  <version>1.2.6</version>
+  <description>The qt_map_rviz_ros package</description>
+  <maintainer email="yasvanth.senthilkumar@gmail.com">YasvanthS</maintainer>
+  <author>YasvanthS</author>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <exec_depend>roscpp</exec_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <build_depend>rviz</build_depend>
+  <exec_depend>rviz</exec_depend>
+  <build_depend>qtbase5-dev</build_depend>
+  <exec_depend>libqt5-core</exec_depend>
+  <exec_depend>libqt5-gui</exec_depend>
+  <exec_depend>libqt5-widgets</exec_depend>
+</package>
