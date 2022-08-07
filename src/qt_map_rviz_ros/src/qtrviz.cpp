@@ -119,12 +119,15 @@ void QtRviz::ReadDispSet(QString path)
 {
   if(!path.isEmpty())
   {
-    return ;
+      if(manager == nullptr)
+      {
+          return ;
+      }
+    rviz::YamlConfigReader yamlConfigRead;
+    rviz::Config con;
+    yamlConfigRead.readFile(con, path);
+    manager->load(con);
   }
-  rviz::YamlConfigReader yamlConfigRead;
-  rviz::Config con;
-  yamlConfigRead.readFile(con, path);
-  manager->load(con);
 }
 
 int QtRviz::GetDispNum(QString classID)
