@@ -290,8 +290,8 @@ void MainWindow::readSettings()
   QSettings settings("Qt-Rviz-Map-Ros-Package", "qt_map_rviz_ros");
   restoreGeometry(settings.value("geometry").toByteArray());
   restoreState(settings.value("windowState").toByteArray());
-  QString masterUrl = settings.value("master_url", QString("https://192.168.0.1:11311/")).toString();
-  QString hostUrl = settings.value("host_url", QString("192.168.0.1")).toString();
+  QString masterUrl = settings.value("master_url", QString("https://localhost:11311")).toString();
+  QString hostUrl = settings.value("host_url", QString("localhost")).toString();
   ui->line_edit_master->setText(masterUrl);
   ui->line_edit_host->setText(hostUrl);
   bool remember = settings.value("remember_settings", false).toBool();
